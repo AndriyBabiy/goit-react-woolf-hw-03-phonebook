@@ -39,9 +39,7 @@ class App extends Component {
   };
 
   createNewContact = newContact => {
-    const existingNames = this.state.contacts.map(({ name }) => name);
-
-    if (existingNames.find(name => name === newContact.name)) {
+    if (this.state.contacts.find(({ name }) => name === newContact.name)) {
       alert(`${newContact.name} is already in contacts`);
     } else {
       this.setState(({ contacts }) => ({
